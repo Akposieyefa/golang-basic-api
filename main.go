@@ -1,0 +1,15 @@
+package main
+
+import (
+	"github.com/akposieyefa/controllers"
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	router := gin.Default()
+	router.GET("/albums", controllers.GetAlbums)
+	router.POST("/albums", controllers.PostAlbums)
+	router.GET("/albums/:id", controllers.GetAlbumByID)
+
+	router.Run("localhost:8080")
+}
